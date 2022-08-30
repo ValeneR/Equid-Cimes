@@ -1,0 +1,61 @@
+.navbar {
+  color: white;
+  height: 85px;
+  display: flex;
+
+  .navbar-header {
+
+    .navbar-logo{
+      height: 70px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .navbar-title-black {
+      font-family: 'Kalam', cursive;
+      font-size: 35px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+
+    .navbar-title-green {
+      font-family: 'Kalam', cursive;
+      font-size: 35px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #095228;
+    }
+
+    .navbar-title-red {
+      font-family: 'Kalam', cursive;
+      font-size: 35px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #880000;
+    }
+  }
+
+  .navbar-navigation {
+    text-align: center;
+    justify-content: normal;
+    
+    .navbar-list {
+      display: flex;
+      list-style: none;
+      padding-left: 12rem;
+      padding-top: 1rem;
+
+      .navbar-path {
+        text-decoration: none;
+        color: black;
+        font-family: Playfair Display, regular;
+        font-size: 22px;
+        text-transform: uppercase;
+        display: inline;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+}

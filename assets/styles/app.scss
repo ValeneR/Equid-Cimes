@@ -1,0 +1,30 @@
+@import "~bootstrap/scss/bootstrap";
+@import "_navbar.scss";
+@import "_footer.scss";
+@import "homepage.scss";
+@import "association.scss";
+@import "member.scss";
+@import "prestations.scss";
+@import "blog_list.scss";
+@import "blog_show.scss";
+@import "contact.scss";
+@import "admin.scss";
+
+body {
+    background-color: white;
+    font-family: 'Mukta', regular;
+    font-size: 18px;
+    margin: 100px;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 40px;
+    color:black;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}

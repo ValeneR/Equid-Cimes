@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/membres', name: 'membres_index')]
+#[Route('/membres', name: 'membres_')]
 
 class MemberController extends AbstractController
 {
-    #[Route('/', name: 'membres')]
+    #[Route('/', name: 'index')]
 
     public function index(): Response
     {

@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/prestations', name: 'prestations_index')]
+#[Route('/prestations', name: 'prestations_')]
 
 class PrestationsController extends AbstractController
 {
-    #[Route('/', name: 'prestations')]
+    #[Route('/', name: 'index')]
 
     public function index(): Response
     {

@@ -1,25 +1,13 @@
-<div class="mt-5"></div>
-<footer class="p-4 mt-auto footer">
-	<div class="container-fluid">
-		<div class="nav d-flex justify-content-center border-top">
-			<ul class="social list-unstyled d-flex flex-row me-auto align-self-center">
-				<li class="ms-3">
-					<a href="https://fr-fr.facebook.com/">
-						<i class='bx bxl-facebook-circle social_icon'></i>
-					</a>
-				</li>
-				<li class="ms-3">
-					<a href="https://www.instagram.com/">
-						<i class='bx bxl-instagram-alt social_icon'></i>
-					</a>
-				</li>
-				<li class="ms-3">
-					<a href="https://twitter.com/?lang=fr">
-						<i class='bx bxl-twitter social_icon'></i>
-					</a>
-				</li>
-			</ul>
-			<p class="inline-block me-auto">&copy; {{ "now"|date("Y") }} {{ 'Compagnie Equid\'Cîmes. Tous droits réservés.'|trans }}</p>
+<footer class="footer fixed-bottom shadow">
+	<div class="footer-social">
+		<p>Suivez nos actualités sur notre page Facebook:</p>
+		<div class="footer-fb">
+			<a href="https://fr-fr.facebook.com/Equidcimes/">
+				<i class='bx bxl-facebook-circle social_icon'></i>
+			</a>
 		</div>
+	</div>
+	<div class="footer-copy">
+		<p class="">&copy; {{ "now"|date("Y") }} {{ 'Compagnie Equid\'Cîmes. Tous droits réservés.'|trans }}</p>
 	</div>
 </footer>

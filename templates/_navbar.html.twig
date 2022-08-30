@@ -1,26 +1,19 @@
 <nav class="navbar fixed-top shadow">
-    <div class="justify-content-center">
-        <a class="navbar-title" href="{{ path('home') }}"> Compagnie Equid'Cîmes</a>
+    <div class="navbar-header">
+        <img class="navbar-logo" src="{{ asset('build/images/logoEquidCimes.png') }}" href="{{ path('homepage') }}" alt="logoEquidCimes"/>
+        <a class="navbar-title-black" href="{{ path('homepage') }}"> Compagnie </a>
+        <a class="navbar-title-green" href="{{ path('homepage') }}">Equid'</a>
+        <a class="navbar-title-red" href="{{ path('homepage') }}">Cîmes</a>
     </div>
 
-    <div class="  " id="navbarNav">
-        <ul class="navbar-nav ">
-            {% set links = [
-                {'title': 'Accueil'|trans, 'path': 'home'},
-                {'title': 'L\'association'|trans, 'path': 'association_index'},
-                {'title': 'Les personanges'|trans, 'path': 'artist_index'},
-                {'title': 'Nos prestations'|trans, 'path': 'event_index'},
-                {'title': 'Le blog'|trans, 'path': 'article_index'},
-                {'title': 'Contact'|trans, 'path': 'contact'},
-            ] %}
-            {% for link in links %}
-                <li class="nav-item mx-4 my-auto ms-lg-0">
-                    <a class="nav-link text-decoration-none hover {{ app.request.pathinfo == path(link.path) ? 'active' }}"
-                            {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
-                        {{ link.title }}
-                    </a>
-                </li>
-            {% endfor %}
+    <div class="navbar-navigation">
+        <ul class="navbar-list">
+            <li><a class= "navbar-path" href="{{ path('homepage') }}">Accueil</a></li>
+            <li><a class= "navbar-path" href="{{ path('association') }}">L'association</a></li>
+            <li><a class= "navbar-path" href="{{ path('membres_index') }}">Les personnages</a></li>
+            <li><a class= "navbar-path" href="{{ path('prestations_index') }}">Nos prestations</a></li>
+            <li><a class= "navbar-path" href="{{ path('blog_index') }}">Le blog</a></li>
+            <li><a class= "navbar-path" href="{{ path('contact') }}">Contact</a></li>
         </ul>
     </div>
 </nav>
