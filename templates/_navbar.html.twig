@@ -1,0 +1,26 @@
+<nav class="navbar fixed-top shadow">
+    <div class="justify-content-center">
+        <a class="navbar-title" href="{{ path('home') }}"> Compagnie Equid'Cîmes</a>
+    </div>
+
+    <div class="  " id="navbarNav">
+        <ul class="navbar-nav ">
+            {% set links = [
+                {'title': 'Accueil'|trans, 'path': 'home'},
+                {'title': 'L\'association'|trans, 'path': 'association_index'},
+                {'title': 'Les personanges'|trans, 'path': 'artist_index'},
+                {'title': 'Nos prestations'|trans, 'path': 'event_index'},
+                {'title': 'Le blog'|trans, 'path': 'article_index'},
+                {'title': 'Contact'|trans, 'path': 'contact'},
+            ] %}
+            {% for link in links %}
+                <li class="nav-item mx-4 my-auto ms-lg-0">
+                    <a class="nav-link text-decoration-none hover {{ app.request.pathinfo == path(link.path) ? 'active' }}"
+                            {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
+                        {{ link.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
