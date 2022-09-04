@@ -1,13 +1,13 @@
 <footer class="footer fixed-bottom shadow">
 	<div class="footer-social">
-		<p>Suivez nos actualités sur notre page Facebook:</p>
-		<div class="footer-fb">
-			<a href="https://fr-fr.facebook.com/Equidcimes/">
-				<i class='bx bxl-facebook-circle social_icon'></i>
-			</a>
+		<div class="footer-suivre">
+			<p class="footer-txt">Suivez nos actualités sur notre page Facebook:</p>
+		</div>
+		<div>
+			<a href="https://www.facebook.com/Equidcimes"><img class="footer-fb" src="{{ asset('build/images/logoFacebook.png') }}" alt="logoFacebook"/></a>
 		</div>
 	</div>
 	<div class="footer-copy">
-		<p class="">&copy; {{ "now"|date("Y") }} {{ 'Compagnie Equid\'Cîmes. Tous droits réservés.'|trans }}</p>
+		<p class="footer-txt">&copy; {{ "now"|date("Y") }} {{ 'Compagnie Equid\'Cîmes. Tous droits réservés.'|trans }}</p>
 	</div>
 </footer>

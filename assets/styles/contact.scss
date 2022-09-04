@@ -1,0 +1,27 @@
+.contact {
+    text-align: center;
+}
+
+.divForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .buttonForm {
+        .buttonContact {
+            align-self: center;
+            border-radius: 10px;
+            background-color: #095228;
+            box-shadow: 0.5em 0.5em 0.75em black;
+            font-family: 'Mukta', regular;
+            font-weight: bold;
+            font-size: 22px;
+            color:white;
+
+            &:hover {
+                background-color: white;
+                color:#095228;
+            }
+        }
+    }
+}

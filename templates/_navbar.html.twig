@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top shadow">
     <div class="navbar-header">
-        <img class="navbar-logo" src="{{ asset('build/images/logoEquidCimes.png') }}" href="{{ path('homepage') }}" alt="logoEquidCimes"/>
+        <a  href="{{ path('homepage') }}"><img class="navbar-logo" src="{{ asset('build/images/logoEquidCimes.png') }}" alt="logoEquidCimes"/></a>
         <a class="navbar-title-black" href="{{ path('homepage') }}"> Compagnie </a>
         <a class="navbar-title-green" href="{{ path('homepage') }}">Equid'</a>
         <a class="navbar-title-red" href="{{ path('homepage') }}">Cîmes</a>
@@ -10,9 +10,14 @@
         <ul class="navbar-list">
             <li><a class= "navbar-path" href="{{ path('homepage') }}">Accueil</a></li>
             <li><a class= "navbar-path" href="{{ path('association') }}">L'association</a></li>
-            <li><a class= "navbar-path" href="{{ path('membres_index') }}">Les personnages</a></li>
-            <li><a class= "navbar-path" href="{{ path('prestations_index') }}">Nos prestations</a></li>
-            <li><a class= "navbar-path" href="{{ path('blog_index') }}">Le blog</a></li>
+            <li><a class= "navbar-path" href="{{ path('membres_index') }}">Nos membres</a></li>
+            <li><a class= "navbar-path" href="{{ path('prestations_index') }}">Les prestations</a></li>
+            <li>{% if app.user %}
+                    <a class= "navbar-path" href="{{ path('article_index') }}">Le blog</a>
+                {% else %}
+                    <a class= "navbar-path" href="{{ path('blog_index') }}">Le blog</a>
+                {% endif %}
+            </li>
             <li><a class= "navbar-path" href="{{ path('contact') }}">Contact</a></li>
         </ul>
     </div>

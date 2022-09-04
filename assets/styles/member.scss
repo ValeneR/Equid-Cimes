@@ -1,7 +1,39 @@
+.img-perso {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    margin: 2em;
+
+    &:hover {
+        filter: brightness(70%);
+    }
+}
+
 .titre-perso {
     font-family: 'Playfair Display', regular;
     font-weight: bold;
     font-size: 30px;
     color: #880000;
     text-decoration: none;
+
+    &:hover {
+        color: #095228;
+    }
+}
+
+.image-perso {
+    width: 30em;
+}
+
+.chronique {
+    font-family: 'Mukta', regular;
+    font-size: 22px;
+    color: black;
+
+    &:hover {
+        font-family: 'Mukta', regular;
+        font-size: 22px;
+        color: #095228;
+        text-decoration: underline;
+    }
 }

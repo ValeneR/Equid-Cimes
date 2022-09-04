@@ -6,6 +6,22 @@
 
     <div class="container mt-4">
         <h1>Le campement</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img class="image-presta-grande" src="{{ asset('build/images/campement.jpg') }}" alt="Campement"/>
+                    <p></p>
+                    <p class="text-center">Vous découvrirez un campement reconstituant la vie au début du XIVème siècle.</p>
+                    <p class="text-center">Celui-ci comporte plusieurs espaces de vie avec notamment:</p> 
+                    <ul class="presta-list">
+                        <li>Une partie cuisine où vous pourrez observer la préparation du repas futur et obtenir de précieux conseils sur la meilleure façon de cuisiner à la mode médiévale.</li>
+                        <li>Une partie centrée sur l'artisanat où vous pouvez retrouver les différents <a class="presta-ateliers" href="{{ path('prestations_ateliers') }}">ateliers</a> que nous proposons, à l'ombre des tentes où nous dormons.</li>
+                    </ul>
+                    <p class="presta-italic text-center">Tarifs sur <a class="presta-contact" href="{{ path('contact') }}">demande</a>.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

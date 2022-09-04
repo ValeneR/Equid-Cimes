@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog Equid'Cîmes{% endblock %}
+
+{% block body %}
+	<h1>Equid'Cîmes : le blog</h1>
+    <h2>Catégorie {{ category.name }}</h2>
+
+    {% for article in articles %}
+		<div class="card categoryBloc">
+		    <h9> {{ article.title }} </h9>
+			<a href="{{ path("article_show", { id: article.id }) }}"><button class="buttonArticle">En savoir plus</button></a>
+		</div>
+	{% endfor %}
+
+	<a class="retour" href="{{ path('blog_index') }}">Retour</a>
+{% endblock %}

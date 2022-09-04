@@ -5,15 +5,14 @@
 @import "association.scss";
 @import "member.scss";
 @import "prestations.scss";
-@import "blog_list.scss";
-@import "blog_show.scss";
+@import "article.scss";
+@import "category.scss";
 @import "contact.scss";
 @import "admin.scss";
+@import "login.scss";
 
 body {
     background-color: white;
-    font-family: 'Mukta', regular;
-    font-size: 18px;
     margin: 100px;
     padding: 0;
 }
@@ -21,10 +20,104 @@ body {
 h1 {
     font-family: 'Playfair Display', regular;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     color:black;
     text-transform: uppercase;
     text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+h2 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    color: #880000;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+h3 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    color: #880000;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+h4 {
+    font-family: 'Playfair Display', regular;
+    font-size: 20px;
+    color:black;
+    text-align: center;
     padding-top: 3%;
     padding-bottom: 3%;
+}
+
+h5 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 30px;
+    color: #880000;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+h6 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 30px;
+    color: #095228;
+    font-style: italic;
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+h7 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 25px;
+    color: #095228;
+    font-style: italic;
+    text-decoration: none;
+    text-align: center;
+}
+
+h8 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 35px;
+    color: #880000;
+    text-transform: uppercase;
+    text-align: center;
+
+    &:hover {
+        text-decoration: underline;
+        color:#095228;
+    }
+}
+
+h9 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 30px;
+    color: #095228;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+p {
+    font-family: 'Mukta', regular;
+    font-size: 22px;
+    color:black;
 }

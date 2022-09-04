@@ -1,0 +1,68 @@
+.association {
+    /* margin-top: 3em; */
+    margin-bottom: 5em;
+}
+
+.asso-italic {
+    font-style: italic;
+}
+
+.attelageMontagne {
+    background-color: #A5C8AA;
+    padding: 1em;
+    display: flex;
+
+    .imgAttelMon {
+        height: 10em;
+        width: 10em;
+        margin: 2em;
+    }
+
+    .txtAttelMon{
+        font-weight: bold;
+
+        .div-btn {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .buttonAttelMon {
+                border-radius: 10px;
+                background-color: #095228;
+                box-shadow: 0.5em 0.5em 0.75em black;
+                font-family: 'Mukta', regular;
+                font-weight: bold;
+                font-size: 22px;
+                color:white;
+
+                &:hover {
+                    background-color: white;
+                    color:#095228;
+                }
+            }
+        }
+    }
+}
+
+.asso-list {
+    list-style: circle;
+    list-style-position: inside;
+    font-family: 'Mukta', regular;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.asso-contact {
+    font-family: 'Mukta', regular;
+    font-size: 22px;
+    font-style: italic;
+    color: black;
+
+    &:hover {
+        font-family: 'Mukta', regular;
+        font-size: 22px;
+        font-style: italic;
+        color: #095228;
+        text-decoration: underline;
+    }
+}

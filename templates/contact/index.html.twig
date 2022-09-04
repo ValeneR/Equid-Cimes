@@ -1,23 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Compagnie Equid'Cîmes - Contactez-nous!
+    Contact
 {% endblock %}
 
 {% block body %}
-    Contact
-	{# <div class="d-flex justify-content-center">
-		<div class="col-md-5">
-			<h1>{{ 'Contactez-nous!'|trans }}</h1>
-			{{ form_start(contactForm) }}
-			{{ form_row(contactForm.name, { 'label': 'Votre nom'|trans }) }}
-			{{ form_row(contactForm.email, { 'label': 'Votre email'|trans}) }}
-			{{ form_row(contactForm.title, { 'label': 'Objet'|trans}) }}
-			{{ form_row(contactForm.message, { 'label': 'Votre message'|trans}) }}
-			<button class="btn btn-primary border mb-1">
-				{{ button_label|default('Envoyer'|trans) }}
-			</button>
-			{{ form_end(contactForm) }}
+   	<h1>Contact</h1>
+   	<div class="contact">
+		<h9>Vous pouvez nous contacter directement:</h9>
+		<h3>Compagnie Equid'Cîmes</h3>
+		<p>13, route de Pierrefeu</p>
+		<p>Saint Blaise</p>
+		<p>05100 BRIANÇON</p>
+		<h3>Anthony FINE - 06.19.71.75.72</h3>
+		<h3>compagnie.equidcimes@gmail.com</h3>
+	</div>
+	<div class="divForm">
+		<h9>Ou remplir le formulaire de contact:</h9>
+		<div class="buttonForm">
+			<a href="{{ path('contact') }}"><button type="button" class="btn buttonContact">Formulaire de contact</button></a>
 		</div>
-	</div> #}
+	</div>
 {% endblock %}

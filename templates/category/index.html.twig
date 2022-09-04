@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog Equid'Cîmes{% endblock %}
+
+{% block body %}
+   <h1>Equid'Cîmes : le blog</h1>
+
+   <div class="categoryFlex">
+   {% for category in categories %}
+        <div class="categoryCard">
+            <a class="categoryLink" href="{{ path("blog_categorie", { categoryName: category.name }) }}"><h8>{{ category.name }}</h8></a>
+        </div>
+   {% else %}
+      Aucune catégorie trouvée
+   {% endfor %}
+</div>
+{% endblock %}

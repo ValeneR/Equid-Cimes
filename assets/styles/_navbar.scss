@@ -1,5 +1,5 @@
 .navbar {
-  color: white;
+  background-color: white;
   height: 85px;
   display: flex;
 
@@ -17,6 +17,7 @@
       font-weight: bold;
       text-decoration: none;
       color: black;
+      padding-top: 1.75em;
     }
 
     .navbar-title-green {
@@ -25,6 +26,7 @@
       font-weight: bold;
       text-decoration: none;
       color: #095228;
+      padding-top: 1.75em;
     }
 
     .navbar-title-red {
@@ -33,6 +35,7 @@
       font-weight: bold;
       text-decoration: none;
       color: #880000;
+      padding-top: 1.75em;
     }
   }
 

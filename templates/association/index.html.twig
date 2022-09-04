@@ -6,55 +6,76 @@
 {% block body %}
 
 	<main>
-		<h1 class="bigTitleAsso">Notre histoire</h1>
-		<div class="paragAsso">
-			<h2 class="titleAsso">La création</h2>
-			<p class="txtAsso">Nous existons depuis 2019 suite à la collaboration entre l’association « Attelage Montagne » et l’écurie « Chez Fado ».
-				La Compagnie Equid’cimes est la section spectacle d’Attelage Montagne.
-				Nous travaillons dur pour faire émerger l’artiste qui sommeille en chacun des membres de notre compagnie.
-				Lors de nos diverses prestations, vous pourrez découvrir l’amitié entre les équidés et l’homme, la découverte de l’histoire de façon immersive, être emportés dans un moment de rêve lors de nos spectacles.
-				Rejoignez-nous dès aujourd’hui pour ne rien manquer.
-			</p>
-		</div>
-		<div class="atelageMontagne">
-			<p class="picAtelMon">photo atelage montagne</p>
-			<div class="txtAtelMon">
-				<p>L’association loi 1901 « Attelage Montagne » fut créer en 2012 dans le but de valoriser et promouvoir les équidés, l’équitation dont la traction animale. 
-					Elle propose diverses prestations équestres telles que la location d’équidés, des promenades en attelage, des jeux à poney à thème, des spectacles…
-				</p>
-				<button class"buttonAtelMon">En savoir plus </button>
+		<h1>Notre histoire</h1>
+
+		<div class="container">
+			<div class="row association">
+				<div class="col-8">
+					<h5>La création</h5>
+					<p>Nous existons depuis 2019 suite à la collaboration entre l’association « Attelage Montagne » et l’écurie « Chez Fado ».
+					<p>La Compagnie Equid’cimes était à la base la section spectacle d’Attelage Montagne. Nous avons décidé en 2022 de nous consacrer uniquement à la partie reconstitution historique en essayant d'être le plus précis possible.</p>
+					<p>Lors de nos différentes prestations, vous pourrez découvrir l’histoire de façon immersive et être emportés dans le moyen-âge du XIVème siècle sur notre campement.</p>
+					<p class="asso-italic">Rejoignez-nous dès aujourd’hui pour ne rien manquer!</p>
+				</div>
 			</div>
-		</div>
-		<div class="paragAsso">
-			<h2 class="titleAsso">Notre projet</h2>
-			<p class="txtAsso">Nous souhaitons faire ressortir l’artiste qui sommeille en chacun de nous, tout en continuant à produire notre propre art. Tous nos membres peuvent apprendre à exprimer leur créativité. Nous proposons des prestations aux enfants, adolescents et adultes. La Compagnie Equid’cimes vous garantit une expérience artistique unique partageant ainsi notre passion du spectacle, de l’histoire et de l’équitation.
-			</p>
-		</div>
-		<div class="paragAsso">
-			<h2 class="titleAsso">La vie de la compagnie</h2>
-			<p class="txtAsso">Elle se compose de plusieurs temps forts au cours de l’année.</p>
-			<div>
-				<h3>Période hivernale: de septembre à avril</h3>
-				<p class="txtAsso">La préparation des spectacles et animations débutera dès le mois de septembre et se poursuivra jusqu’à juin.
-					Durant cette période : 
-						Création de numéros
-						Création de costumes
-						Création des accessoires
-						Amélioration des jeux d’acteur
-						Amélioration de l’équitation de spectacle des membres
-						Amélioration des pratiques du maniement de l’escrime de spectacle
-						Répétition des numéros
-				</p>
-				<h3>Période estivale: de mai à août</h3>
-				<p class="txtAsso">Les spectacles auront lieu principalement les weekends du mois de juin au mois de septembre en tout lieu pour toutes occasions :
-					fêtes
-					animations scolaires
-					séminaires
-					mariages
-					soirées thématiques
-				</p>
+
+			<div class="row association">
+				<div class="col-3">
+				</div>
+				<div class="col-9 attelageMontagne">
+					<img class="imgAttelMon" src="{{ asset('build/images/atelage_montagne.png') }}" alt="Atelage Montagne"/>
+					<div class="txtAttelMon">
+						<p>L’association loi 1901 « Attelage Montagne » fut crée en 2012 dans le but de valoriser et promouvoir les équidés, l’équitation dont la traction animale.</p>
+						<p>Elle propose diverses prestations équestres telles que la location d’équidés, des promenades en attelage, des jeux à poney à thème, des spectacles, etc…</p>
+						<div class="div-btn col-11">
+							<a href="https://www.facebook.com/AttelageMontagne05"><button type="button" class="btn buttonAttelMon">En savoir plus</button></a>
+						</div>
+					</div>
+				</div>
 			</div>
-			<p>Vous souhaitez nous rejoindre, obtenir plus de renseignements, n’hésitez pas à nous contacter.</p>
+
+			<div class="row association">
+				<div class="col-8">
+					<h5>Notre projet</h5>
+					<p>Nous sommes une association de reconstitution historique multi-époques avec un campement actuellement concentré sur le début du XIVème siècle.</p>
+					<p>Nous représentons une délégation de marchands et artisans venus des Hautes Terres à la suite d'un héraut d'armes autour des années 1330-1340. Nous essayons d'être le plus sérieux possible et de refléter la vie de l'époque à travers diverses animations et ateliers. Ceux-ci s'adaptent en fonction de l'âge des participants, des enfants aux adultes en passant par les adolescents.</p>
+					<p>Une fois le XIVème siècle correctement reconstitué, nous élargirons les possibilités à d'autres époques (antiquité, periode viking, renaissance, XVIIIème siècle, etc...). Tous nos membres peuvent apprendre à exprimer leur créativité. La Compagnie Equid’cimes vous garantit une expérience historique unique partageant ainsi notre passion de l’histoire et de l’artisanat.</p>
+				</div>
+			</div>
+
+			<div class="row association">
+				<div class="col-12">
+					<h5>La vie de la compagnie</h5>
+					<p class="text-center">Elle se décompose en deux phases:</p>
+					<div class="row">
+						<div class="col-6 text-center">
+							<h7 class="">Période hivernale: d'octobre à avril</h7>
+							<p>La préparation des costumes et des animations débutera dès le mois d'octobre et se poursuivra jusqu’en avril. Durant cette période :</p>
+							<ul class="asso-list">
+								<li>Création de costumes</li>
+								<li>Amélioration des ateliers</li>
+								<li>Amélioration du matériel commun</li>
+								<li>Acquisition de nouvelles connaissances</li>
+								<li>Recherche de sources historiques</li>
+							</ul>
+						</div>
+						<div class="col-6 text-center">
+							<h7>Période estivale: de mai à septembre</h7>
+							<p>Les prestations auront lieu principalement les weekends du mois de mai au mois de septembre en tous lieux pour toutes occasions :
+							<ul class="asso-list">
+								<li>Fêtes médiévales</li>
+								<li>Soirées thématiques</li>
+								<li>Animations scolaires</li>
+								<li>Mariages</li>
+								<li>Camps inter-troupes</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<p class="asso-italic text-center">Vous souhaitez nous rejoindre, obtenir plus de renseignements? N’hésitez pas à <a class="asso-contact" href="{{ path('contact') }}">nous contacter</a>.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
 {% endblock %}

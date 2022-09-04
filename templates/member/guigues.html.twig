@@ -3,8 +3,19 @@
 {% block title %}Guigues d'Albon{% endblock %}
 
 {% block body %}
-<h1 class="text-center my-5">Guigues d'Albon</h1>
-
-</div>
-</div>
+    <h1>Guigues d'Albon</h1>
+    <h6>Comte d'Albon, héraut des Hautes Terres</h6>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img class="image-perso" src="{{ asset('build/images/guigues.jpg') }}" alt="Guigues d'Albon"/>
+            </div>
+            <div class="col-6">
+                <p></p>
+                <p>Aimant les voyages, les nouvelles rencontres et les missions diplomatiques, notre jeune comte parcourra et parcours encore, avec ses fidèles compagnons, le vaste territoire d’Orient et d’Occident. Il prend la charge de héraut d’armes dans un but des plus lucratif, lui permettant ainsi d’être au centre de la politique des grandes maisons.</p>
+                <p>Il portera ainsi des messages pour le comte et la comtesse de Nevière aux quatre coins du royaume, ramenant souvent avec lui de nouveaux compagnons.</p>
+                <p>Vous pouvez suivre ses péripéties dans ses <a class="chronique" href="{{ path("blog_categorie", { categoryName: 'Chroniques' }) }}">chroniques de voyage</a>.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

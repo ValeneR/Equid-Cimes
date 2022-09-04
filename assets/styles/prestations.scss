@@ -1,0 +1,91 @@
+.presta-italic {
+    font-style: italic;
+}
+
+.img-presta {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    margin: 2em;
+
+    &:hover {
+        filter: brightness(70%);
+    }
+}
+
+.titre-presta {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 30px;
+    color: #880000;
+    text-decoration: none;
+
+    &:hover {
+        color: #095228;
+    }
+}
+
+.titre-presta2 {
+    font-family: 'Playfair Display', regular;
+    font-weight: bold;
+    font-size: 30px;
+    color: #880000;
+    text-decoration: none;
+    line-height: 10em;
+
+    &:hover {
+        color: #095228;
+    }
+}
+
+.image-presta-grande {
+    width: 100%;
+    padding: 1em;
+}
+
+.presta-contact {
+    font-family: 'Mukta', regular;
+    font-size: 22px;
+    font-style: italic;
+    color: black;
+
+    &:hover {
+        font-family: 'Mukta', regular;
+        font-size: 22px;
+        font-style: italic;
+        color: #095228;
+        text-decoration: underline;
+    }
+}
+
+.presta-list {
+    list-style: circle;
+    list-style-position: inside;
+    font-family: 'Mukta', regular;
+    color: black;
+    font-size: 22px;
+    margin-bottom: 1em;
+}
+
+.presta-ateliers{
+    font-family: 'Mukta', regular;
+    color: black;
+    font-size: 22px;
+    text-decoration: underline;
+
+    &:hover {
+        font-family: 'Mukta', regular;
+        font-size: 22px;
+        color: #095228;
+        text-decoration: underline;
+    }
+}
+
+.atelier {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.animations {
+    margin-top: 5em;
+}

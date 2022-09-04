@@ -1,0 +1,18 @@
+.image-accueil {
+    width: 80%;
+    align-items: center;
+}
+
+.membres {
+    margin-top: 4em;
+    font-style: italic;
+    font-size: 15px;
+
+    .membresLink {
+        color: black;
+
+        &:hover {
+            color:#095228;
+        }
+    }
+}

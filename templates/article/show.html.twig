@@ -3,5 +3,18 @@
 {% block title %}Blog Equid'Cîmes{% endblock %}
 
 {% block body %}
-   <h1>Article {{ id }}</h1>
+   <div>
+      <h1>{{ article.title }}</h1>
+      <p class="text-center fst-italic">Catégorie : {{ article.category.name }}</p>
+      <p class="text-center fst-italic">Par {{ article.user.name }} - Le </p>
+   </div>
+   <div class="articleTexte">
+      <p>{{ article.text }}</p>
+   </div>
+
+   {% if app.user %}
+      <a class="retour" href="{{ path("article_index", { categoryName: article.category.name }) }}">Retour</a>
+   {% else %}
+      <a class="retour" href="{{ path("blog_categorie", { categoryName: article.category.name }) }}">Retour</a>
+   {% endif %}
 {% endblock %}

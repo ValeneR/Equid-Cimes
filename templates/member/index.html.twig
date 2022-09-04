@@ -1,27 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les personnages{% endblock %}
+{% block title %}Nos membres{% endblock %}
 
 {% block body %}
-    <h1 class="text-center my-5">Les personnages</h1>
+    <h1>Nos membres</h1>
 
     <div class="container">
-        <div class="row g-3">
-            <p>image Guigues</p>
-            {# <img src="{{ asset('build/path_to_image.png') }}" alt=""/ #}
-            <a class="titre-perso" href="{{ path('membres_guigues') }}">Guigues d'Albon</a>
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ path('membres_guigues') }}"><img class="img-perso" src="{{ asset('build/images/guigues_index.jpg') }}" alt="Guigues d'Albon"/></a>
+                <a class="titre-perso" href="{{ path('membres_guigues') }}">Guigues d'Albon</a>
+            </div>
+            <div class="col-6">
+                <a href="{{ path('membres_blanche') }}"><img class="img-perso" src="{{ asset('build/images/blanche_index.jpg') }}" alt="Blanche de Villedieu"/></a>
+                <a class="titre-perso" href="{{ path('membres_blanche') }}">Blanche de Villedieu</a>
+            </div>
         </div>
-        <div class="row g-3">
-            <p>image Blanche</p>
-            <a class="titre-perso" href="{{ path('membres_blanche') }}">Blanche de Villedieu</a>
-        </div>
-        <div class="row g-3">
-            <p>image Alana</p>
-            <a class="titre-perso" href="{{ path('membres_alana') }}">Alana Louarn Rouss</a>
-        </div>
-        <div class="row g-3">
-            <p>image Théobald</p>
-            <a class="titre-perso" href="{{ path('membres_theobald') }}">Théobald</a>
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ path('membres_alana') }}"><img class="img-perso" src="{{ asset('build/images/alana_index.jpg') }}" alt="Alana Louarn Rouss"/></a>
+                <a class="titre-perso" href="{{ path('membres_alana') }}">Alana Louarn Rouss</a>
+            </div>
+            <div class="col-6">
+                <a href="{{ path('membres_theobald') }}"><img class="img-perso" src="{{ asset('build/images/theobald_index.jpg') }}" alt="Théobald"/></a>
+                <a class="titre-perso" href="{{ path('membres_theobald') }}">Théobald</a>
+            </div>
         </div>
     </div>
 {% endblock %}

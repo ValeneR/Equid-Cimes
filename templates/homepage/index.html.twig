@@ -3,7 +3,32 @@
 {% block title %}Equid'Cîmes{% endblock %}
 
 {% block body %}
-<div>
-    <h1>{{ website }} index</h1>
+<div class="container">
+    <div class="row">
+        <h1>Bienvenue au XIVème siècle</h1>
+        <div class="col-12 border">
+            <img class="image-accueil" src="{{ asset('build/images/accueil.jpg') }}" alt="La troupe"/>
+        </div>
+    </div>
+
+    {# <div>
+        {% for article in articles %}
+            <div div="articleBloc">
+                <h8>{{ article.title }}</h8>
+                <p>Catégorie: {{ article.category.name }}</p>
+                <a href="{{ path("article_show", { id: article.id }) }}"><button>En savoir plus</button></a>
+            </div>
+        {% else %}
+            Aucun article trouvé
+        {% endfor %}
+    </div> #}
+
+    <div class="membres">
+        {% if app.user %}
+            <p class="text-center">Si vous voulez vous déconnecter, <a class="membresLink"  href="{{ path('logout') }}">cliquez ici</a>.</p>
+        {% else %}
+            <p class="text-center">Membres de l'association, <a class="membresLink" href="{{ path('login') }}">connectez-vous</a> à votre espace personnel.</p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

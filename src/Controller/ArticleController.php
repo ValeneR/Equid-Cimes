@@ -2,55 +2,100 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
+use App\Form\ArticleType;
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-#[Route('/blog', name: 'blog_')]
+
+#[Route('/blog/article', name: 'article_')]
 
 class ArticleController extends AbstractController
 {
-    #[Route('/index/{page}', requirements: ['page'=>'\d+'], name: 'index')]
+    #[Route('/', name: 'index')]
 
-    public function list(int $page = 1): Response
+    public function index(ArticleRepository $articleRepository): Response
     {
-        return $this->render('article/index.html.twig', [
-            'page' => $page,
-         ]);
+        $articles = $articleRepository->findAll();
+
+        return $this->render('article/index.html.twig', 
+            ['articles' => $articles]
+        );
     }
 
-    /* #[Route('/show', name: 'article')]
+    #[Route('/{id<[0-9]+$>}', name: 'show')]
 
-    public function show(): Response
+    public function show(int $id, ArticleRepository $articleRepository): Response
     {
-        return $this->render('article/show.html.twig', [
-            'article' => 'article',
-         ]);
-    } */
+        $article = $articleRepository->findOneBy(['id' => $id]);
 
-    #[Route('/article/{id}', requirements: ['page'=>'\d+'], methods: ['GET'], name: 'article_{id}')]
+        if (!$article) {
+            throw $this->createNotFoundException(
+                'Aucun article avec l\'identifiant '.$id.' n\'a été trouvé.'
+            );
+        }
 
-    public function show(int $id): Response
-    {
         return $this->render('article/show.html.twig', [
-            'id' => $id,
+            'article' => $article,
         ]);
     }
 
-    // Tu souhaites créer un nouvel article (affichage en GET et traitement du formulaire en POST).
-    /* #[Route('/new', methods: ['GET', 'POST'], name: 'new')] */
-        /* public function new(): Response
-    { */
-        // traitement d'un formulaire par exemple
-    
-        // redirection vers la page 'blog_show',
-        // correspondant à l'url /blog/4
-        /* return $this->redirectToRoute('blog_show', ['id' => 4]);
-    } */
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
+    public function new(Request $request, ArticleRepository $articleRepository): Response
+    {
+        $article = new Article();
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
 
-    // Tu souhaites afficher un article en fonction de son identifiant, cela se fera plutôt par un lien, donc en GET.
-    /* #[Route('/{id}', methods: ['GET'], name: 'show')] */
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articleRepository->add($article, true);
 
-    //Tu souhaites supprimer un article, tu pourrais limiter la méthode à DELETE uniquement.
-    /* #[Route('/{id}', methods: ['DELETE'], name: 'delete')] */
+            return $this->redirectToRoute('article_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('article/new.html.twig', [
+            'article' => $article,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Article $article, ArticleRepository $articleRepository): Response
+    {
+        // Check wether the logged in user is the owner of the program
+        if (!($this->getUser() == $article->getUser())) {
+        // If not the owner, throws a 403 Access Denied exception
+        throw new AccessDeniedException('Seul l\'auteur de l\'article peut le modifier!');
+        }
+
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articleRepository->add($article, true);
+
+            return $this->redirectToRoute('article_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('article/edit.html.twig', [
+            'article' => $article,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}', name: 'delete', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function delete(Request $request, Article $article, ArticleRepository $articleRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+            $articleRepository->remove($article, true);
+        }
+
+        return $this->redirectToRoute('article_index', [], Response::HTTP_SEE_OTHER);
+    }
 }
