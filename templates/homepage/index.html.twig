@@ -6,22 +6,10 @@
 <div class="container">
     <div class="row">
         <h1>Bienvenue au XIVème siècle</h1>
-        <div class="col-12 border">
+        <div class="imageHP">
             <img class="image-accueil" src="{{ asset('build/images/accueil.jpg') }}" alt="La troupe"/>
         </div>
     </div>
-
-    {# <div>
-        {% for article in articles %}
-            <div div="articleBloc">
-                <h8>{{ article.title }}</h8>
-                <p>Catégorie: {{ article.category.name }}</p>
-                <a href="{{ path("article_show", { id: article.id }) }}"><button>En savoir plus</button></a>
-            </div>
-        {% else %}
-            Aucun article trouvé
-        {% endfor %}
-    </div> #}
 
     <div class="membres">
         {% if app.user %}

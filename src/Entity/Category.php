@@ -17,9 +17,7 @@ class Category
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
-    #[Assert\Length(
-        max: 255,
-        maxMessage: 'La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères')]
+    #[Assert\Length(max: 255)]
     private ?string $name = null;
 
     public function getId(): ?int

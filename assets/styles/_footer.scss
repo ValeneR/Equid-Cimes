@@ -1,18 +1,31 @@
 .footer {
     background-color: white;
-    font-size: 20px;
+    font-size: 1vw;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 320px) {
+        flex-direction: column;
+    }
     
     .footer-txt {
         font-family: 'Mukta', regular;
-        font-size: 18px;
+        font-size: 1vw;
+
+        @media screen and (max-width : 320px) {
+            display: flex;
+            justify-content: center;
+        }
     }
-    /* align-items: center; */
 
     .footer-social {
         padding-left: 10%;
         display: flex;
+
+        @media screen and (max-width : 320px) {
+            padding-left: 0%;
+            justify-content: center;
+        }
 
         .footer-suivre {
             padding-top: 1.25em;
@@ -28,5 +41,9 @@
         padding-right: 10%;
         padding-top: 1.25em;
         text-align: right;
+
+        @media screen and (max-width : 320px) {
+            padding-right: 0%;
+        }
     }
 }

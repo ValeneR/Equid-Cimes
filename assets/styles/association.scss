@@ -26,12 +26,12 @@
             flex-direction: row-reverse;
 
             .buttonAttelMon {
-                border-radius: 10px;
+                border-radius: 0.75em;
                 background-color: #095228;
                 box-shadow: 0.5em 0.5em 0.75em black;
                 font-family: 'Mukta', regular;
                 font-weight: bold;
-                font-size: 22px;
+                font-size: 1vw;
                 color:white;
 
                 &:hover {

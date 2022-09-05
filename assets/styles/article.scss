@@ -5,3 +5,47 @@
 .articleText {
     padding-top: 3%;
 }
+
+.btnModifs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.buttonMembre {
+    border-radius: 0.75em;
+    background-color:#095228;
+    box-shadow: 0.5em 0.5em 0.75em black;
+    font-family: 'Mukta', regular;
+    font-weight: bold;
+    font-size: 1vw;
+    color:white;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    &:hover {
+        background-color: white;
+        color:#095228;
+    }
+}
+
+.newArticle {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+
+    .buttonNew {
+        border-radius: 0.75em;
+        background-color:#880000;
+        box-shadow: 0.5em 0.5em 0.75em black;
+        font-family: 'Mukta', regular;
+        font-weight: bold;
+        font-size: 1vw;
+        color:white;
+    
+        &:hover {
+            background-color: white;
+            color:#880000;
+        }
+    }
+}

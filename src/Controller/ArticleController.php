@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Doctrine\ORM\EntityManagerInterface;
 
 
 #[Route('/blog/article', name: 'article_')]
@@ -46,9 +47,11 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
+
     public function new(Request $request, ArticleRepository $articleRepository): Response
     {
         $article = new Article();
+        /* $article->setDate(new \DateTime('now')); */
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
@@ -64,7 +67,8 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
+    #[Route('/edit/{id}', name: 'edit', methods: ['GET', 'POST'])]
+
     public function edit(Request $request, Article $article, ArticleRepository $articleRepository): Response
     {
         // Check wether the logged in user is the owner of the program
@@ -88,14 +92,19 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
+    #[Route('/delete/{id}', name: 'delete', methods: ['GET'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function delete(Request $request, Article $article, ArticleRepository $articleRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
-            $articleRepository->remove($article, true);
-        }
 
-        return $this->redirectToRoute('article_index', [], Response::HTTP_SEE_OTHER);
+    public function delete (Article $article, EntityManagerInterface $manager): Response
+    {
+        $manager->remove($article);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre article a été supprimé avec succès'
+        );
+
+        return $this->redirectToRoute('article_index');
     }
 }

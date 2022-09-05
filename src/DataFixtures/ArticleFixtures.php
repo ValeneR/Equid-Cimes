@@ -14,7 +14,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         $article = new article();
         $article->setTitle('Interview de Auguste Caen');
         $article->setText('Bonjour, je m’appelle Maxime (Auguste Caen), je suis un jeune homme de 22 ans. Je suis dans le monde de la reconstitution historique depuis mes 18 ans. Avant cette période, je pratiquais du LARP (GN: Grandeur Nature en France) et pas mal de jeux de rôle orientés héroïque fantasy. Cet intérêt pour le monde médiéval, qu’il soit fictif ou réel, est apparu durant mes 1er parties de jeux de rôle alors que j’avais 11 ans et cet intérêt s’est développé jusqu’à aujourd’hui.');
-        $article->setDate(new \DateTime('2021-05-19'));
+        /* $article->setDate(new \DateTime('2021-05-19')); */
         $article->setUser($this->getReference('user_histoAdmin'));
         $article->setCategory($this->getReference('category_Actualités'));
         $manager->persist($article);
@@ -28,7 +28,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         Revenons à notre récit qui me fait prendre la plume ce jour, je rapporterais l’histoire de la mort suspecte du comte dans un prochain parchemin. Celui-ci est consacré à retranscrire le plus fidèlement possible l’affaire des étoffes de la cour de Pétronille de Nevière.
         
         ');
-        $article->setDate(new \DateTime('2021-03-05'));
+        /* $article->setDate(new \DateTime('2021-03-05')); */
         $article->setUser($this->getReference('user_histoMember'));
         $article->setCategory($this->getReference('category_Chroniques'));
         $manager->persist($article);

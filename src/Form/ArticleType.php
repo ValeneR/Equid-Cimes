@@ -13,9 +13,9 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('date')
             ->add('text')
             ->add('category', null, ['choice_label' => 'name'])
+            ->add('user', null, ['choice_label' => 'name'])
         ;
     }
 
